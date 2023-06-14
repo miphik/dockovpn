@@ -17,7 +17,7 @@ COPY scripts .
 COPY config ./config
 COPY VERSION ./config
 
-RUN apk add --no-cache openvpn easy-rsa bash netcat-openbsd zip dumb-init && \
+RUN apk add --no-cache openvpn easy-rsa bash netcat-openbsd zip dumb-init iptables ip6tables && \
     ln -s /usr/share/easy-rsa/easyrsa /usr/bin/easyrsa && \
     mkdir -p ${APP_PERSIST_DIR} && \
     # Copy FROM ./scripts/server/conf TO /etc/openvpn/server.conf in DockerFile
